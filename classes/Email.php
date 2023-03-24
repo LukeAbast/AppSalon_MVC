@@ -24,14 +24,14 @@ class Email{
     public function enviarConfirmacion() {
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = 'sandbox.smtp.mailtrap.io';
+        $mail->Host = 'smtp.mailtrap.io';
         $mail->SMTPAuth = true;
         $mail->Port = 2525;
         $mail->Username = '4fbc07691b3355';
         $mail->Password = 'fc187425f4db38';
-        
+
         $mail->setFrom('cuentas@appsalon.com');
-        $mail->addAddress($this->email, 'AppSalon.com');
+        $mail->addAddress('cuentas@appsalon.com', 'AppSalon.com');
         $mail->Subject = 'Confirma tu Cuenta';
 
         //Set HTML
@@ -59,14 +59,14 @@ class Email{
     public function enviarInstrucciones() {
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = 'sandbox.smtp.mailtrap.io';
+        $mail->Host = 'smtp.mailtrap.io';
         $mail->SMTPAuth = true;
         $mail->Port = 2525;
         $mail->Username = '4fbc07691b3355';
         $mail->Password = 'fc187425f4db38';
 
         $mail->setFrom('cuentas@appsalon.com');
-        $mail->addAddress($this->email, 'AppSalon.com');
+        $mail->addAddress('cuentas@appsalon.com', 'AppSalon.com');
         $mail->Subject = 'Reestablece tu Password';
 
         //Set HTML
@@ -77,7 +77,7 @@ class Email{
 
         $contenido = "<html>";
         $contenido .= "<p>Hola <strong>" . $this->nombre . "</strong>. Has solicitado Reestablecer tu Password en AppSalon. Presiona el siguiente enlace:</p>";
-        $contenido .= "<p>Presiona aquí: <a href='http://lukeabast.alwaysdata.net/confirmarCuenta?token=" . $this->token . "'>Reestablecer Password</a> </p>"; 
+        $contenido .= "<p>Presiona aquí: <a href='http://lukeabast.alwaysdata.net/recuperar?token=" . $this->token . "'>Reestablecer Password</a> </p>"; 
         $contenido .= "<p>Si no has sido tú, ignora este mensaje</p>";
         $contenido .= "</html>";
         //---------------------
