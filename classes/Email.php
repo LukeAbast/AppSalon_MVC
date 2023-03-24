@@ -24,12 +24,12 @@ class Email{
     public function enviarConfirmacion() {
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = 'smtp-relay.sendinblue.com';
+        $mail->Host = 'sandbox.smtp.mailtrap.io';
         $mail->SMTPAuth = true;
         $mail->Port = 2525;
-        $mail->Username = 'lucasbarberis28460@gmail.com';
-        $mail->Password = 'xsmtpsib-bf13325257b00b92683ec46040833d30bfa7161335e39f427ba09881c11f79b4-fsG6O52LWFb3VPgI';
-
+        $mail->Username = '4fbc07691b3355';
+        $mail->Password = 'fc187425f4db38';
+        
         $mail->setFrom('cuentas@appsalon.com');
         $mail->addAddress($this->email, 'AppSalon.com');
         $mail->Subject = 'Confirma tu Cuenta';
@@ -59,11 +59,11 @@ class Email{
     public function enviarInstrucciones() {
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = 'smtp-relay.sendinblue.com';
+        $mail->Host = 'sandbox.smtp.mailtrap.io';
         $mail->SMTPAuth = true;
         $mail->Port = 2525;
-        $mail->Username = 'lucasbarberis28460@gmail.com';
-        $mail->Password = 'xsmtpsib-bf13325257b00b92683ec46040833d30bfa7161335e39f427ba09881c11f79b4-fsG6O52LWFb3VPgI';
+        $mail->Username = '4fbc07691b3355';
+        $mail->Password = 'fc187425f4db38';
 
         $mail->setFrom('cuentas@appsalon.com');
         $mail->addAddress($this->email, 'AppSalon.com');
