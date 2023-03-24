@@ -24,14 +24,14 @@ class Email{
     public function enviarConfirmacion() {
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = 'smtp.mailtrap.io';
+        $mail->Host = 'smtp-relay.sendinblue.com';
         $mail->SMTPAuth = true;
         $mail->Port = 2525;
-        $mail->Username = '4fbc07691b3355';
-        $mail->Password = 'fc187425f4db38';
+        $mail->Username = 'lucasbarberis28460@gmail.com';
+        $mail->Password = 'xsmtpsib-bf13325257b00b92683ec46040833d30bfa7161335e39f427ba09881c11f79b4-fsG6O52LWFb3VPgI';
 
         $mail->setFrom('cuentas@appsalon.com');
-        $mail->addAddress('cuentas@appsalon.com', 'AppSalon.com');
+        $mail->addAddress($this->email, 'AppSalon.com');
         $mail->Subject = 'Confirma tu Cuenta';
 
         //Set HTML
@@ -42,7 +42,7 @@ class Email{
 
         $contenido = "<html>";
         $contenido .= "<p>Hola <strong>" . $this->nombre . "</strong>. Has creado tu cuenta en AppSalon, solo debes confirmarla presionando el siguiente enlace:</p>";
-        $contenido .= "<p>Presiona aquí: <a href='http://localhost:3000/confirmarCuenta?token=" . $this->token . "'>Confirmar Cuenta</a> </p>"; 
+        $contenido .= "<p>Presiona aquí: <a href='http://lukeabast.alwaysdata.net/confirmarCuenta?token=" . $this->token . "'>Confirmar Cuenta</a> </p>"; 
         $contenido .= "<p>Si no has sido tú, ignora este mensaje</p>";
         $contenido .= "</html>";
         //---------------------
