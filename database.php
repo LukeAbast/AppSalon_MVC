@@ -1,10 +1,10 @@
 <?php
 
 $db = mysqli_connect(
-    'mysql-lukeabast.alwaysdata.net',
-    'lukeabast',
-    'nataliamaya261088',
-    'lukeabast_appsalon_mvc'
+    $_ENV['DB_HOST'],
+    $_ENV['DB_USER'],
+    $_ENV['DB_PASS'],
+    $_ENV['DB_BD']
 );
 
 $db->set_charset("utf8");
